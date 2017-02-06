@@ -176,3 +176,4 @@ ans =
 diary off
 
 # 10.b
+Since the condition number the matrix that arises in polynomial interpolation is very large (9.3218e+27) and that means this matrix is ill-conditioned and is also hard to invert. Thus, it is not a good idea to do polynomial interpolation with 20 points.
