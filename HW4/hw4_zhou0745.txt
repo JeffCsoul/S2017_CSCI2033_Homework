@@ -1,5 +1,5 @@
-% Problem 7
-% 7.(a)
+% Problem 8
+% 8.(a)
 A = [0 0 0 0 1 0;
 0 0 0 1 0 0;
 0 1 0 0 0 0;
@@ -16,8 +16,8 @@ A =
      0     1     0     0     0     1
      0     0     1     0     1     0
 
-% 7.(b)
-% function used in 7.(b)
+% 8.(b)
+% function used in 8.(b)
 function L2 = deep2(A, n, l, t)
     if (l == 2)
         L2 = [t n];
@@ -31,7 +31,7 @@ function L2 = deep2(A, n, l, t)
         L2 = temp_ans;
     end
 end
-% script used in 7.(b)
+% script used in 8.(b)
 path2 =
 
      []
@@ -58,8 +58,8 @@ path2 =
      6     5     2
      6     5     6
      
-% 7.(c)
-% function used in 7.(c)
+% 8.(c)
+% function used in 8.(c)
 function L3 = deep3(A, n, l, t)
     if (l == 3)
         L3 = [t n];
@@ -73,7 +73,7 @@ function L3 = deep3(A, n, l, t)
         L3 = temp_ans;
     end
 end
-% script used in 7.(c)
+% script used in 8.(c)
 path3 = []
 
 path3 =
@@ -110,8 +110,8 @@ path3 =
      6     5     6     3
      6     5     6     5
      
-% 7.(d)
-% function used in 7.(d)
+% 8.(d)
+% function used in 8.(d)
 function L123 = deep123(A, n, l, t)
     temp_ans = [];
     if (l <= 3  && l >= 1)
@@ -126,7 +126,7 @@ function L123 = deep123(A, n, l, t)
     end
     L123 = temp_ans;
 end
-% script used in 7.(d)
+% script used in 8.(d)
 path123 = []
 
 path123 =
@@ -186,4 +186,157 @@ path123 =
      6     5     6     3
      6     5     6     5 
      
+% problem 9
+% 9.(a)
+A = [1 1; 0 1]
 
+A =
+
+     1     1
+     0     1
+
+inv(A)
+
+ans =
+
+     1    -1
+     0     1
+
+A2 = [1 1 0; 0 1 1; 0 0 1]
+
+A2 =
+
+     1     1     0
+     0     1     1
+     0     0     1
+
+inv(A2)
+
+ans =
+
+     1    -1     1
+     0     1    -1
+     0     0     1
+
+A3 = [1 1 0 0 ; 0 1 1 0; 0 0 1 1; 0 0 0 1]
+
+A3 =
+
+     1     1     0     0
+     0     1     1     0
+     0     0     1     1
+     0     0     0     1
+
+inv(A3)
+
+ans =
+
+     1    -1     1    -1
+     0     1    -1     1
+     0     0     1    -1
+     0     0     0     1
+
+A4 = [1 1 0 0 0;0 1 1 0 0;0 0 1 1 0;0 0 0 1 1;0 0 0 0 1]
+
+A4 =
+
+     1     1     0     0     0
+     0     1     1     0     0
+     0     0     1     1     0
+     0     0     0     1     1
+     0     0     0     0     1
+
+inv(A4)
+
+ans =
+
+     1    -1     1    -1     1
+     0     1    -1     1    -1
+     0     0     1    -1     1
+     0     0     0     1    -1
+     0     0     0     0     1
+
+% 9.(b)
+% The special form for the inverses is that, there're all 0 under the main diagonal, full of 1 on the main diagonal, full of -1 on the diagonal immediately above the main diagonal, then full of 1 on the diagonal above the previous diagonal... The rest diagonals both follow this iteration law (1, then -1, then 1, then -1, then 1....) until it reaches the up-right corner, 
+
+% problem 10
+% 10.(a)
+A = [1 1 0 8 -1;
+1 4 1 0 8;
+0 4 1 0 0;
+8 1 1 4 1;
+-1 8 0 1 4]
+
+A =
+
+     1     1     0     8    -1
+     1     4     1     0     8
+     0     4     1     0     0
+     8     1     1     4     1
+    -1     8     0     1     4
+
+b = [0;-1;0;1;0]
+
+b =
+
+     0
+    -1
+     0
+     1
+     0
+
+A \ b
+
+ans =
+
+    0.2152
+    0.1103
+   -0.4412
+   -0.0597
+   -0.1519
+
+% 10.(b)
+cond(A)
+
+ans =
+
+   13.6530
+
+% 10.(c)
+rank(A)
+
+ans =
+
+     5
+
+% 10.(d)
+[L,U,P] = lu(A)
+
+L =
+
+    1.0000         0         0         0         0
+   -0.1250    1.0000         0         0         0
+         0    0.4923    1.0000         0         0
+    0.1250    0.1077   -0.1475    1.0000         0
+    0.1250    0.4769    0.8689   -0.0794    1.0000
+
+
+U =
+
+    8.0000    1.0000    1.0000    4.0000    1.0000
+         0    8.1250    0.1250    1.5000    4.1250
+         0         0    0.9385   -0.7385   -2.0308
+         0         0         0    7.2295   -1.8689
+         0         0         0         0    7.5238
+
+
+P =
+
+     0     0     0     1     0
+     0     0     0     0     1
+     0     0     1     0     0
+     1     0     0     0     0
+     0     1     0     0     0
+
+% 10.(e)
+% Yes, it permuted some rows since P is not equivalent to I_5. It means matlab has interchanged some rows in the procedure when performing an LU factorization of the coefficient matrix. 
