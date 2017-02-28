@@ -17,7 +17,19 @@ A =
      0     0     1     0     1     0
 
 % 8.(b)
-% function used in 8.(b)
+% path represented by matrix
+A ^ 2
+
+ans =
+
+     0     1     0     0     0     1
+     1     0     0     0     1     0
+     0     0     0     1     0     0
+     0     1     0     0     1     1
+     0     0     1     1     1     0
+     0     2     0     0     0     1
+% specified path routes
+% function used in getting 8.(b) specified paths
 function L2 = deep2(A, n, l, t)
     if (l == 2)
         L2 = [t n];
@@ -31,7 +43,7 @@ function L2 = deep2(A, n, l, t)
         L2 = temp_ans;
     end
 end
-% script used in 8.(b)
+% script used in getting 8.(b) specified paths
 path2 =
 
      []
@@ -59,7 +71,18 @@ path2 =
      6     5     6
      
 % 8.(c)
-% function used in 8.(c)
+% path represented by matrix
+A ^ 3
+
+ans =
+
+     0     0     1     1     1     0
+     0     1     0     0     1     1
+     1     0     0     0     1     0
+     0     1     1     1     1     1
+     1     2     0     0     1     1
+     0     0     1     2     1     0
+% function used in getting 8.(c) specified paths
 function L3 = deep3(A, n, l, t)
     if (l == 3)
         L3 = [t n];
@@ -73,7 +96,7 @@ function L3 = deep3(A, n, l, t)
         L3 = temp_ans;
     end
 end
-% script used in 8.(c)
+% script used in getting 8.(c) specified paths
 path3 = []
 
 path3 =
@@ -111,7 +134,18 @@ path3 =
      6     5     6     5
      
 % 8.(d)
-% function used in 8.(d)
+% path represented by matrix
+A ^ 2 + A ^ 3
+
+ans =
+
+     0     1     1     1     1     1
+     1     1     0     0     2     1
+     1     0     0     1     1     0
+     0     2     1     1     2     2
+     1     2     1     1     2     1
+     0     2     1     2     1     1
+% function used in getting 8.(d) specified paths
 function L123 = deep123(A, n, l, t)
     temp_ans = [];
     if (l <= 3  && l >= 1)
@@ -126,7 +160,7 @@ function L123 = deep123(A, n, l, t)
     end
     L123 = temp_ans;
 end
-% script used in 8.(d)
+% script used in getting 8.(d) specified paths
 path123 = []
 
 path123 =

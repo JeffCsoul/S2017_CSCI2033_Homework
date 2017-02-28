@@ -215,7 +215,7 @@ ans =
     6.1410    4.8625    4.7318    9.4815    9.1342
 
 # answer for problem 9.e
-# Different calculations give different results. The order of calculations in matrix matters.
+# Different calculations give different results. The order of matrix calculations matters.
 
 
 # problem 10
