@@ -396,5 +396,6 @@ det(P)
 ans =
 
     -1
+
 % 10.d
 % det(L) * det(U) * det(P) = det(A)
